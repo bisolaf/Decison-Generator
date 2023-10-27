@@ -17,9 +17,9 @@ import org.junit.Before;
 public class BasicDatasetTest {
     // IMPORTANT: for this filepath to work, make sure the project is open as the top-level directory in IntelliJ
     // (See the first yellow information box in the handout testing section for details)
-    String trainingPath = "data/testgame.csv"; // TODO: replace with your own input file
-    String targetAttribute = "outcome"; // TODO: replace with your own target attribute
-    TreeGenerator testGenerator;
+   // String trainingPath = "data/testgame.csv"; // TODO: replace with your own input file
+   // String targetAttribute = "outcome"; // TODO: replace with your own target attribute
+   // TreeGenerator testGenerator;
 
 
     /**
