@@ -6,7 +6,6 @@ import src.Row;
 /**
  * A class representing a leaf in the decision tree.
  */
-// TODO: Uncomment this once you've implemented the methods in the ITreeNode interface!
 public class DecisionLeaf implements ITreeNode  {
     // TODO: add fields as needed
     private String outcome;
@@ -28,5 +27,4 @@ public class DecisionLeaf implements ITreeNode  {
         return this.outcome;
     }
 
-    // TODO: Implement the ITreeNode interface
 }
