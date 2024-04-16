@@ -10,7 +10,6 @@ import src.Row;
 /**
  * A class representing a training dataset for the decision tree
  */
-// TODO: Uncomment this once you've implemented the methods in the IDataset interface!
 public class Dataset  implements IDataset {
     private List<String> attributeList;
     private List<Row> dataObjects;
@@ -24,7 +23,7 @@ public class Dataset  implements IDataset {
      * @param attributeSelection - an enum for which way to select attributes
      **/
     public Dataset(List<String> attributeList, List<Row> dataObjects, AttributeSelection attributeSelection) {
-        // TODO: implement the constructor! (Hint: take a look at `getAttributeToSplitOn`)
+
         this.attributeList = attributeList;
         this.dataObjects = dataObjects;
         this.selectionType = attributeSelection;
@@ -63,24 +62,6 @@ public class Dataset  implements IDataset {
      *
      * @param att      - attribute to be removed
      *Returns a list of string with removed attribute
-     **/
-//private List<String> removeA(String att){
-//    List<String> newlist = new ArrayList<>(this.attributeList);
-//    newlist.remove(att);
-//    return newlist;
-//}
-
-// public Dataset splitDatahelper(String attribute, String value) {
-//     List<Row> check = this.dataObjects.stream()
-//           .filter(row -> Objects.equals(row.getAttributeValue(attribute), value)).toList();
-//     List<String> attllist = new LinkedList<>();
-////     attllist = check.get(0).getAttributes().stream().toList();
-//     attllist = check.get(0).getAttributes().stream().toList();
-//     attllist.remove(attribute);
-//
-//     return new Dataset(attllist, check, this.attributeSelection);
-// }
-
     /**
      * Helper for Split data
      *
@@ -97,8 +78,6 @@ public class Dataset  implements IDataset {
             }
         }
         return stringlist;
-//        this.dataObjects.stream()     .map(row-> row.getAttributeValue(attr)).distinct().toList();
-
     }
 
     /**
@@ -121,10 +100,6 @@ public class Dataset  implements IDataset {
         List<Dataset> subset = new ArrayList<>();
         List<String> lesslist = new ArrayList<>(this.attributeList);
         lesslist.remove(attribute);
-        // List<String> lesslist = this.attributeList.removeA(attribute);
-//        List<String> lesslist = this.attributeList.stream()
-////                .map(s -> s.contains(attribute))
-//                .filter(s -> s.contains(attribute)).toList();
         for (String st : this.getAllValues(attribute)) {
             List<Row> data = new ArrayList<>();
             for (Row r : this.dataObjects) {
@@ -172,9 +147,7 @@ public class Dataset  implements IDataset {
         int rand = 0;
         int rando = this.attributeList.size();
 
-        rand = random.nextInt(rando);
-//
-//        }
+        rand = random.nextInt(rando);  }
 
         return rand;
     }
@@ -203,16 +176,6 @@ public class Dataset  implements IDataset {
         return this.selectionType;
     }
 
-//    public boolean checkdf (String target) {
-//    String def =  this.getDefault(target);
-//    for(Row dat :this.dataObjects){
-//        String att = dat.getAttributeValue(target);
-//        if(!(Objects.equals(att, def))){
-//            return false;
-//        }
-//    }
-//    return true;
-//}
     /**
      * Method that gets the criteria to split attribytes on
      */
@@ -225,7 +188,7 @@ public class Dataset  implements IDataset {
             return this.attributeList.stream().sorted().toList().get(this.attributeList.size() - 1);
         }
         case RANDOM -> {   // Change AttributeSelection.RANDOM => Random
-            // TODO: Implement random attribute selection!
+
              return this.attributeList.get(this.getRandom());
 
         }
