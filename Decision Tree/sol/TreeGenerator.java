@@ -10,7 +10,6 @@ import java.util.List;
 /**
  * A class that implements the ITreeGenerator interface used to generate a decision tree
  */
-// TODO: Uncomment this once you've implemented the methods in the ITreeGenerator interface!
 public class TreeGenerator  implements ITreeGenerator<Dataset>  {
     // TODO: document this field
     private Dataset training;
@@ -79,6 +78,4 @@ public class TreeGenerator  implements ITreeGenerator<Dataset>  {
         return this.root.getDecision(r);
     }
 
-
-    // TODO: Implement methods declared in ITreeGenerator interface!
 }
