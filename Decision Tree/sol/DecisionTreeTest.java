@@ -20,16 +20,16 @@ import java.util.List;
  * A class containing the tests for methods in the TreeGenerator and Dataset classes
  */
 public class DecisionTreeTest {
-   private String trainingPathGame = "data/testgame.csv"; // TODO: replace with your own input file
-    private String trainingPathFruit = "data/fruits-and-vegetables.csv"; // TODO: replace with your own input file
-    private String trainingPathWeather = "data/weather.csv"; // TODO: replace with your own input file
+   private String trainingPathGame = "data/testgame.csv"; 
+    private String trainingPathFruit = "data/fruits-and-vegetables.csv"; // 
+    private String trainingPathWeather = "data/weather.csv"; 
     private String trainingPathempty = "data/empty.csv";
 
     private String trainingPathemptyh = "data/emptyheading.csv";
     private String trainingPathcountry = "data/country.csv";
-    private String targetAttributeGame = "outcome"; // TODO: replace with your own target attribute
-    private String targetAttributeWeather = "event"; // TODO: replace with your own target attribute
-    private String targetAttributeFruit = "foodType"; // TODO: replace with your own target attribute
+    private String targetAttributeGame = "outcome"; 
+    private String targetAttributeWeather = "event"; 
+    private String targetAttributeFruit = "foodType"; 
     private String targetAttributeempty = "";
     private String targetAttributeemptyH = "Y";
 
@@ -59,15 +59,6 @@ public class DecisionTreeTest {
     private Dataset splitDataC ;
 
 
-    //TODO: Write more unit and system tests! Some basic guidelines that we will be looking for:
-    // 1. Small unit tests on the Dataset class testing the IDataset methods
-    // 2. Small unit tests on the TreeGenerator class that test the ITreeGenerator methods
-    // 3. Tests on your own small dataset (expect 70% accuracy on testing data, 95% on training data)
-    // 4. Test on the villains dataset (expect 70% accuracy on testing data, 95% on training data)
-    // 5. Tests on the mushrooms dataset (expect 70% accuracy on testing data, 95% on training data)
-    // Feel free to write more unit tests for your own helper methods -- more details can be found in the handout!
-
-
 
 
     /**
@@ -86,8 +77,6 @@ public class DecisionTreeTest {
             List<String> attributeListWeather = new ArrayList<>(dataObjectsWeather.get(0).getAttributes());
             this.trainingWeather = new Dataset(attributeListWeather, dataObjectsWeather, AttributeSelection.DESCENDING_ALPHABETICAL);
             // builds a TreeGenerator object and generates a tree for "foodType"
-
-//        TODO: Uncomment this once you've implemented generateTree
             this.testGenerator = new TreeGenerator();
             this.testGenerator.generateTree(trainingWeather, this.targetAttributeWeather);
 
@@ -221,7 +210,6 @@ public class DecisionTreeTest {
         emp.setAttributeValue("P", "");
         emp.setAttributeValue("T", "");
         emp.setAttributeValue("Y", "");
-//        Assert.assertNull(this.trainingemptyh.getDecision(emp));
         this.trainingemptyh.getDecision(emp);
 
 
@@ -279,7 +267,7 @@ public class DecisionTreeTest {
     @Test
     public void testSplitData() {
         // For descriptions of what splitDataTest is, refer to the @Before section
-        // Now I'm using .splitData on splitDataTest by the attribute type "alphabet"
+        // Now I'm using .splitData on splitDataTest by the attribute type "alphabet."
         List<Dataset> splitDataList = this.splitDataTest.splitData("alphabet");
 
         //I tried to test by comparing splitDataA and splitDataB from the datasets in splitDataList
